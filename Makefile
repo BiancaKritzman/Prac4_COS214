@@ -1,6 +1,6 @@
 CXX=g++ -std=c++11
 CFLAGS=-I. -Wall -Werror
-TARGET=eventflow
+TARGET=taskforge
 OBJS= .o 
 
 all: $(OBJS)
