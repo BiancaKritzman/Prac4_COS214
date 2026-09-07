@@ -19,4 +19,4 @@ COPY . .
 RUN make
 
 # Run the compiled program when the container starts
-CMD ["./main"]
+CMD ["./taskforge"]
