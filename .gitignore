@@ -1,0 +1,13 @@
+# IntelliJ / CLion
+.idea/
+
+# Build files
+*.o
+taskforge
+
+# Debug files
+*.gdb
+
+# OS files
+.DS_Store
+Thumbs.db

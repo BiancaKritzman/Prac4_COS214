@@ -1,16 +1,31 @@
-CXX=g++ -std=c++11
-CFLAGS=-I. -Wall -Werror
-TARGET=taskforge
-OBJS= .o 
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -Werror
 
-all: $(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) -o $(TARGET)
+TARGET = taskforge
+
+OBJS = main.o \
+       EmergencyResponseSystem.o \
+       ResponseContainer.o \
+       ResponseTeam.o \
+       Responder.o \
+       Incident.o \
+       EmergencyDecorator.o \
+       PriorityDecorator.o \
+       LogsDecorator.o \
+       ResponderState.o \
+       AvailabilityState.o \
+       RespondingState.o
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
 %.o: %.cpp
-	$(CXX) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(TARGET) $(OBJS)
 
-leak:	
-	valgrind --leak-check=full ./eventflow
+leak: $(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET)
