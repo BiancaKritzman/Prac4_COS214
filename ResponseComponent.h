@@ -7,10 +7,13 @@
 using namespace std;
 
 class ResponseComponent {
+    protected:
+    Type type;
     public:
-        ResponseComponent();
+        ResponseComponent(Type type);
+        Type getType() const { return this->type; };
         virtual void checkIn() = 0;
-        virtual ~ResponseComponent();
+        virtual ~ResponseComponent() {};
 };
 
 #endif //PRAC4_COS214_RESPONSECONTAINER_H

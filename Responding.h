@@ -6,6 +6,7 @@
 class Responding : public ResponderState{
 public:
     Responding();
+    bool isAvailable() const override;
     void handleIncident() override;
     ~Responding() override;
 };

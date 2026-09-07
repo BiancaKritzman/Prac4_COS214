@@ -6,7 +6,6 @@
 class LogsDecorator : public EmergencyDecorator {
 public:
     LogsDecorator(ResponseComponent* component);
-
     void checkIn() override;
     ~LogsDecorator() override;
 };

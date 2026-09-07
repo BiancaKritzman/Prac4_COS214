@@ -8,10 +8,12 @@ private:
     Incident* currentIncident;
     ResponseTeam* responseNetwork;
 public:
-    EmergencyResponseSystem(ResponseTeam* responseNetwork);
+    explicit EmergencyResponseSystem(ResponseTeam* responseNetwork);
     void reportIncident(Incident* incident);
     void dispatchIncident();
-    void attendence();
+    void attendance();
+    void completeIncident();
+    ~EmergencyResponseSystem();
 };
 
 

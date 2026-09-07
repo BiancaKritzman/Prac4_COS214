@@ -10,7 +10,9 @@ private:
     ResponderState* currentState;
     public:
         void setState(ResponderState* state);
-        Responder();
+        Responder(Type type);
+        bool isAvailable() const;
+        void completeIncident();
         void checkIn();
         void handleIncident(Incident* incident, string method);
         ~Responder();

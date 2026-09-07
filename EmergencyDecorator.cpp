@@ -3,9 +3,10 @@
 //
 
 #include "EmergencyDecorator.h"
+#include "ResponseComponent.h"
 
 EmergencyDecorator::EmergencyDecorator(ResponseComponent* component)
-    : response(component)
+    : ResponseComponent(component->getType()), response(component)
 {
 }
 

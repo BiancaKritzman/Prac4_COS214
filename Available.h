@@ -6,6 +6,7 @@
 class Available : public ResponderState{
     public:
     Available();
+    bool isAvailable() const override;
     void handleIncident() override;
     ~Available() override;
 };

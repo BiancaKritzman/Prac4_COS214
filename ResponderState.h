@@ -5,6 +5,7 @@
 class ResponderState {
     public:
     ResponderState();
+    virtual bool isAvailable() const = 0;
     virtual void handleIncident() = 0;
     virtual ~ResponderState();
 };

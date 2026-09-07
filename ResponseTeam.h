@@ -7,15 +7,15 @@ using namespace std;
 
 class ResponseTeam : public ResponseComponent {
 private:
-    Type type;
+    friend class LiveResponseMovement;
+    friend class SnapshotResponseMovement;
     vector<ResponseComponent*> responses;
-    public:
-        ResponseTeam();
+public:
+        ResponseTeam(Type type) : ResponseComponent(type) {};
         void addResponse(ResponseComponent* response);
         void removeResponse(ResponseComponent* response);
         void checkIn() override;
         ResponseMovement* createMovement(string method);
-        vector<ResponseComponent*> getChildren();
         ~ResponseTeam();
 };
 
